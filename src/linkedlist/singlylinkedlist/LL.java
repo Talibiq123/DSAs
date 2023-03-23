@@ -1,4 +1,4 @@
-package singlylinkedlist;
+package linkedlist.singlylinkedlist;
 
 // Custom Linked List
 public class LL {

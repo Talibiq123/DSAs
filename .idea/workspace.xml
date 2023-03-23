@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd273b9a-0d46-4096-b274-e6a0d7594af0" name="Changes" comment="commit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/singlylinkedlist/LL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linkedlist/singlylinkedlist/LL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/singlylinkedlist/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linkedlist/singlylinkedlist/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +38,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.singlylinkedlist.Main">
+  <component name="RunManager" selected="Application.linkedlist.singlylinkedlist.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="DSAs" />
@@ -46,12 +46,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="singlylinkedlist.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="singlylinkedlist.Main" />
+    <configuration name="linkedlist.singlylinkedlist.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="linkedlist.singlylinkedlist.Main" />
       <module name="DSAs" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="singlylinkedlist.*" />
+          <option name="PATTERN" value="linkedlist.singlylinkedlist.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -61,7 +61,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.singlylinkedlist.Main" />
+        <item itemvalue="Application.linkedlist.singlylinkedlist.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -96,7 +96,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679571553128</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="commit">
+      <created>1679572187711</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1679572187711</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

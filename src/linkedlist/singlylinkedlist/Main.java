@@ -1,6 +1,6 @@
-package singlylinkedlist;
+package linkedlist.singlylinkedlist;
 
-//internal linked list provided by JAVA
+//internal linked list provided by JAVA...
 //import java.util.LinkedList;
 
 public class Main {
