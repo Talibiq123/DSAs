@@ -21,18 +21,6 @@ public class LL {
         size += 1;
     }
 
-    public void insertEnd(int value) {
-        if (tail == null) {
-            insertFirst(value);
-            return;
-        }
-        Node node = new Node(value);
-        tail.next = node;
-        tail = node;
-
-        size += 1;
-    }
-
     public void insert(int value, int index) {
         if (index == 0) {
             insertFirst(value);
@@ -52,6 +40,20 @@ public class LL {
         size += 1;
     }
 
+    public void insertEnd(int value) {
+        if (tail == null) {
+            insertFirst(value);
+            return;
+        }
+        Node node = new Node(value);
+        tail.next = node;
+        tail = node;
+
+        size += 1;
+    }
+
+
+
     public int deleteFirst() {
         int value = head.value;
         head = head.next;
@@ -60,6 +62,20 @@ public class LL {
         }
         size--; //IMPORTANT, don't forget this
         return value;
+    }
+
+    public int delete(int index) {
+        if (index == 0) {
+            return deleteFirst();
+        }
+        if (index == size - 1) {
+            return deleteLast();
+        }
+        Node prev = get(index - 1);
+        int val = prev.next.value;
+        prev.next = prev.next.next;
+        size--;
+        return val;
     }
 
     public int deleteLast() {
@@ -83,13 +99,24 @@ public class LL {
         return node;
     }
 
+    public Node find(int val) {
+        Node node = head;
+        while (node != null) {
+            if (node.value == val) {
+                return node;
+            }
+            node = node.next;
+        }
+        return null;
+    }
+
     public void display() {
         Node temp = head;
         while (temp != null) {
             System.out.print(temp.value + " -> ");
             temp  = temp.next;
         }
-        System.out.println("End");
+        System.out.print("NULL");
     }
 
     private class Node {

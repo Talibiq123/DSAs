@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd273b9a-0d46-4096-b274-e6a0d7594af0" name="Changes" comment="commit" />
+    <list default="true" id="fd273b9a-0d46-4096-b274-e6a0d7594af0" name="Changes" comment="commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/linkedlist/singlylinkedlist/LL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linkedlist/singlylinkedlist/LL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/linkedlist/singlylinkedlist/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linkedlist/singlylinkedlist/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,13 +33,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.Hello">
+}</component>
+  <component name="RunManager" selected="Application.linkedlist.singlylinkedlist.Main">
     <configuration name="Hello" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="linkedlist.circularlinkedlist.Hello" />
       <module name="DSAs" />
@@ -71,8 +75,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Hello" />
         <item itemvalue="Application.linkedlist.singlylinkedlist.Main" />
+        <item itemvalue="Application.Hello" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -121,7 +125,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679572424156</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="commit">
+      <created>1679574196180</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679574196180</updated>
+    </task>
+    <task id="LOCAL-00007" summary="commit">
+      <created>1679574203063</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1679574203063</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

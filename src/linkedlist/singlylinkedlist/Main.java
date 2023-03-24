@@ -5,7 +5,7 @@ package linkedlist.singlylinkedlist;
 
 public class Main {
     public static void main(String[] args) {
-        //for internal limked list
+        //for internal linked list
 //        LinkedList<Integer> list = new LinkedList<>();
 //        list.add(4);
 //        list.add(8);
@@ -30,8 +30,10 @@ public class Main {
 
         list.display();
 
-        System.out.println(list.deleteFirst());
-        System.out.println(list.deleteLast());
+        System.out.println();
+        System.out.println("Deleted Value = "+list.deleteFirst());
+        System.out.println("Deleted Value = "+list.deleteLast());
+        System.out.println("Deleted Value = "+list.delete(2));
         list.display();
     }
 }
