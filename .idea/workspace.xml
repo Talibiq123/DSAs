@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd273b9a-0d46-4096-b274-e6a0d7594af0" name="Changes" comment="commit">
+      <change afterPath="$PROJECT_DIR$/src/linkedlist/doublylinkedlist/DoublyLL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/linkedlist/doublylinkedlist/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/linkedlist/singlylinkedlist/LL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linkedlist/singlylinkedlist/LL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/linkedlist/singlylinkedlist/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/linkedlist/singlylinkedlist/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +39,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.linkedlist.singlylinkedlist.Main">
+  <component name="RunManager" selected="Application.linkedlist.doublylinkedlist.Main">
     <configuration name="Hello" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="linkedlist.circularlinkedlist.Hello" />
       <module name="DSAs" />
@@ -60,6 +60,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="linkedlist.doublylinkedlist.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="linkedlist.doublylinkedlist.Main" />
+      <module name="DSAs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="linkedlist.doublylinkedlist.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="linkedlist.singlylinkedlist.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="linkedlist.singlylinkedlist.Main" />
       <module name="DSAs" />
@@ -75,6 +88,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.linkedlist.doublylinkedlist.Main" />
         <item itemvalue="Application.linkedlist.singlylinkedlist.Main" />
         <item itemvalue="Application.Hello" />
         <item itemvalue="Application.Main" />
@@ -139,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679574203063</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="commit">
+      <created>1679656407076</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1679656407076</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
