@@ -8,6 +8,10 @@ public class Main {
         dlist.insertFirst(3);
         dlist.insertFirst(2);
         dlist.insertFirst(1);
+        dlist.insertLast(6);
+        dlist.insertLast(9);
+        dlist.insert(6,7);
+        dlist.insert(7, 8);
 
         dlist.display();
     }
