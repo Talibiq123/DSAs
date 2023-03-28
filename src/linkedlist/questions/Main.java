@@ -19,12 +19,24 @@ public class Main {
         
         RecLL ans = RecLL.merge(list1, list2);
 
-        ans.display();
-        System.out.println();
+        //ans.display();
+        //System.out.println();
 
         //list.deleteDuplicates();
 
         //list.display();
+
+        InterviewQuestions list = new InterviewQuestions();
+        list.insertFirst(8);
+        list.insertFirst(7);
+        list.insertFirst(6);
+        list.insertFirst(5);
+        list.insertFirst(4);
+        list.insertFirst(3);
+        list.insertFirst(2);
+        list.insertFirst(1);
+
+
 
     }
 }
