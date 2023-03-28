@@ -138,6 +138,35 @@ public class RecLL {
         tail.next = null;
     }
 
+    // 21. Merge two sorted list
+    public static RecLL merge(RecLL first, RecLL second) {
+        Node f = first.head;
+        Node s = second.head;
+
+        RecLL ans = new RecLL();
+
+        while (f != null && s != null) {
+            if (f.value < s.value) {
+                ans.insertEnd(f.value);
+                f = f.next;
+            } else {
+                ans.insertEnd(s.value);
+                s = s.next;
+            }
+        }
+
+        while (f != null) {
+            ans.insertEnd(f.value);
+            f = f.next;
+        }
+
+        while (s != null) {
+            ans.insertEnd(s.value);
+            s = s.next;
+        }
+        return ans;
+    }
+
     public void display() {
         Node temp = head;
         while (temp != null) {
