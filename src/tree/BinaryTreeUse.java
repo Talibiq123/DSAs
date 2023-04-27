@@ -119,6 +119,41 @@ public class BinaryTreeUse {
         return count;
     }
 
+    public static int heightOfTree(BinaryTreeNode<Integer> root) {
+        if (root == null) {
+            return 0;
+        }
+        int heightLeft = heightOfTree(root.left);
+        int heightRight = heightOfTree(root.right);
+
+        return 1 + Math.max(heightLeft , heightRight);
+    }
+
+    public static int NoOfLeafNodes(BinaryTreeNode<Integer> root) {
+        if (root == null) {
+            return -1;
+        }
+
+        if (root.left == null && root.right == null) {
+            return 1;
+        }
+        return NoOfLeafNodes(root.left) + NoOfLeafNodes(root.right);
+    }
+
+    public static void printAtDepthK(BinaryTreeNode<Integer> root, int k) {
+        if (root == null) {
+            return;
+        }
+
+        if (k == 0) {
+            System.out.println(root.data);
+            return;
+        }
+
+        printAtDepthK(root.left, k - 1);
+        printAtDepthK(root.right, k - 1);
+    }
+
     public static void main(String[] args) {
 //        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(1);
 //
@@ -138,7 +173,10 @@ public class BinaryTreeUse {
         //System.out.println("Numbers of Nodes = "+countNodes(root));
         //System.out.println("Sum of Nodes = "+NodesSum(root));
         //System.out.printf("Largest = "+largest(root));
-        System.out.printf("Count Greater than X = " +countNodesGreaterThanX(root, 5));
+        //System.out.printf("Count Greater than X = " +countNodesGreaterThanX(root, 5));
+        //System.out.printf("Height of Tree is "+heightOfTree(root));
+        //System.out.printf("Number of Leaf Nodes = "+NoOfLeafNodes(root));
+        printAtDepthK(root, 2);
 
     }
 }
