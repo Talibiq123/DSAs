@@ -1,3 +1,4 @@
+// 2. second class in tree Package
 package tree;
 
 import java.util.Scanner;
@@ -93,6 +94,15 @@ public class BinaryTreeUse {
         return root.data + leftSum + rightSum;
     }
 
+    public static int largest(BinaryTreeNode<Integer> root) {
+        if (root == null) {
+            return -1;
+        }
+        int largestLeft = largest(root.left);
+        int largestRight = largest(root.right);
+        return Math.max(root.data, Math.max(largestLeft, largestRight));
+    }
+
     public static void main(String[] args) {
 //        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(1);
 //
@@ -108,9 +118,10 @@ public class BinaryTreeUse {
 //
 //        //printTree(root);
         BinaryTreeNode<Integer> root = takeTreeInputBetter(true, 0, true);
-        printTreeDetailed(root);
-        System.out.println("Numbers of Nodes = "+countNodes(root));
-        System.out.println("Sum of Nodes = "+NodesSum(root));
+        //printTreeDetailed(root);
+        //System.out.println("Numbers of Nodes = "+countNodes(root));
+        //System.out.println("Sum of Nodes = "+NodesSum(root));
+        System.out.printf("Largest = "+largest(root));
 
     }
 }
