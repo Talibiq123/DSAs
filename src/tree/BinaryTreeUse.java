@@ -103,6 +103,22 @@ public class BinaryTreeUse {
         return Math.max(root.data, Math.max(largestLeft, largestRight));
     }
 
+    public static int countNodesGreaterThanX(BinaryTreeNode<Integer> root, int X) {
+        if (root == null) {
+            return 0;
+        }
+        int count = (root.data > X)?1:0;
+
+        if (root.left != null) {
+            count += countNodesGreaterThanX(root.left, X);
+        }
+
+        if (root.right != null) {
+            count += countNodesGreaterThanX(root.right, X);
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
 //        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(1);
 //
@@ -121,7 +137,8 @@ public class BinaryTreeUse {
         //printTreeDetailed(root);
         //System.out.println("Numbers of Nodes = "+countNodes(root));
         //System.out.println("Sum of Nodes = "+NodesSum(root));
-        System.out.printf("Largest = "+largest(root));
+        //System.out.printf("Largest = "+largest(root));
+        System.out.printf("Count Greater than X = " +countNodesGreaterThanX(root, 5));
 
     }
 }
