@@ -154,6 +154,16 @@ public class BinaryTreeUse {
         printAtDepthK(root.right, k - 1);
     }
 
+    public static void changeToTreeDepthHelper(BinaryTreeNode<Integer> root, int depth) {
+        if (root == null) {
+            return;
+        }
+
+        root.data = depth;
+        changeToTreeDepthHelper(root.left, depth + 1);
+        changeToTreeDepthHelper(root.right, depth + 1);
+    }
+
     public static void main(String[] args) {
 //        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(1);
 //
@@ -176,7 +186,9 @@ public class BinaryTreeUse {
         //System.out.printf("Count Greater than X = " +countNodesGreaterThanX(root, 5));
         //System.out.printf("Height of Tree is "+heightOfTree(root));
         //System.out.printf("Number of Leaf Nodes = "+NoOfLeafNodes(root));
-        printAtDepthK(root, 2);
+        //printAtDepthK(root, 2);
+        changeToTreeDepthHelper(root, 0);
+        //printTreeDetailed(root); //changeToTreeDepthHelper check krne ke liye
 
     }
 }
