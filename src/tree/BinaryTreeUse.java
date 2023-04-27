@@ -163,6 +163,34 @@ public class BinaryTreeUse {
         changeToTreeDepthHelper(root.left, depth + 1);
         changeToTreeDepthHelper(root.right, depth + 1);
     }
+    public static BinaryTreeNode<Integer> removeLeaves(BinaryTreeNode<Integer> root) {
+        if (root == null) {
+            return null;
+        }
+
+        if (root.left == null && root.right == null) {
+            return null;
+        }
+
+        root.left = removeLeaves(root.left);
+        root.right = removeLeaves(root.right);
+
+        return root;
+    }
+
+
+    public static void mirrorBinaryTree(BinaryTreeNode<Integer> root) {
+        if (root == null) {
+            return;
+        }
+
+        mirrorBinaryTree(root.left);
+        mirrorBinaryTree(root.right);
+
+        BinaryTreeNode<Integer> tenpLeft = root.left;
+        root.left = root.right;
+        root.right = tenpLeft;
+    }
 
     public static void main(String[] args) {
 //        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(1);
@@ -187,8 +215,11 @@ public class BinaryTreeUse {
         //System.out.printf("Height of Tree is "+heightOfTree(root));
         //System.out.printf("Number of Leaf Nodes = "+NoOfLeafNodes(root));
         //printAtDepthK(root, 2);
-        changeToTreeDepthHelper(root, 0);
+        //changeToTreeDepthHelper(root, 0);
         //printTreeDetailed(root); //changeToTreeDepthHelper check krne ke liye
+        //BinaryTreeNode<Integer> nwwRoot = removeLeaves(root);
+        //printTreeDetailed(nwwRoot);
+        //mirrorBinaryTree(root);
 
     }
 }
