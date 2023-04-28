@@ -1,6 +1,8 @@
 // 2. second class in tree Package
 package tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class BinaryTreeUse {
@@ -239,6 +241,53 @@ public class BinaryTreeUse {
         return ans;
     }
 
+    public static int diameterOfBinaryTree(BinaryTreeNode<Integer> root) {
+        if (root == null) {
+            return 0;
+        }
+
+        int option1 = heightOfTree(root.left) + heightOfTree(root.right);
+        int options2 = heightOfTree(root.left);
+        int options3 = heightOfTree(root.right);
+
+        return Math.max(option1, Math.max(options2, options3));
+    }
+
+    public static BinaryTreeNode<Integer> takeInputLevelWise() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter root data");
+        int rootData = sc.nextInt();
+
+        if (rootData == -1) {
+            return null;
+        }
+
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<Integer>(rootData);
+        Queue<BinaryTreeNode<Integer>> pendingChildren = new LinkedList<BinaryTreeNode<Integer>>();
+        pendingChildren.add(root);
+
+        while (!pendingChildren.isEmpty()) {
+            BinaryTreeNode<Integer> front = pendingChildren.poll();
+            System.out.println("Enter left child of "+front.data);
+            int left = sc.nextInt();
+            if (left != -1) {
+                BinaryTreeNode<Integer> leftChild = new BinaryTreeNode<>(left);
+                front.left = leftChild;
+                pendingChildren.add(leftChild);
+            }
+
+            System.out.println("Enter the right child of "+front.data);
+            int right = sc.nextInt();
+            if (right != -1) {
+                BinaryTreeNode<Integer> rightChild = new BinaryTreeNode<>(right);
+                front.right = rightChild;
+                pendingChildren.add(rightChild);
+            }
+
+        }
+        return root;
+    }
+
     public static void main(String[] args) {
 //        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(1);
 //
@@ -253,7 +302,7 @@ public class BinaryTreeUse {
 //        rootRight.left = threeLeft;
 //
 //        //printTree(root);
-        BinaryTreeNode<Integer> root = takeTreeInputBetter(true, 0, true);
+        //BinaryTreeNode<Integer> root = takeTreeInputBetter(true, 0, true);
         //printTreeDetailed(root);
         //System.out.println("Numbers of Nodes = "+countNodes(root));
         //System.out.println("Sum of Nodes = "+NodesSum(root));
@@ -269,7 +318,11 @@ public class BinaryTreeUse {
         //mirrorBinaryTree(root);
 
         //System.out.println(isBalanced(root));
-        System.out.println("is Balance "+isBalancedBetter(root).isBalanced);
+        //System.out.println("is Balance "+isBalancedBetter(root).isBalanced);
+
+        //System.out.println("Diameter is "+diameterOfBinaryTree(root));
+        BinaryTreeNode<Integer> root = takeInputLevelWise();
+        printTreeDetailed(root);
 
     }
 }
