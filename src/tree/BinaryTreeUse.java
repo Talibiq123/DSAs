@@ -192,6 +192,23 @@ public class BinaryTreeUse {
         root.right = tenpLeft;
     }
 
+    public static boolean isBalanced(BinaryTreeNode<Integer> root) {
+        if (root == null) {
+            return true;
+        }
+        int leftHeight = heightOfTree(root.left);
+        int rightHeight = heightOfTree(root.right);
+
+        if (Math.abs(leftHeight - rightHeight) > 1) {
+            return false;
+        }
+
+        Boolean isLeftBalanced = isBalanced(root.left);
+        Boolean isRightBalanced = isBalanced(root.right);
+
+        return (isLeftBalanced && isRightBalanced);
+    }
+
     public static void main(String[] args) {
 //        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(1);
 //
@@ -220,6 +237,8 @@ public class BinaryTreeUse {
         //BinaryTreeNode<Integer> nwwRoot = removeLeaves(root);
         //printTreeDetailed(nwwRoot);
         //mirrorBinaryTree(root);
+
+        System.out.println(isBalanced(root));
 
     }
 }
