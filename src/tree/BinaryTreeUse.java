@@ -361,6 +361,38 @@ public class BinaryTreeUse {
         return root;
     }
 
+    public static BinaryTreeNode<Integer> buildTreeHelper(int[] postOrder, int postStart, int postEnd, int[] inOrder, int inStart, int inEnd) {
+        if (postStart > postEnd || inStart > inEnd) {
+            return null;
+        }
+
+        int rootVal = postOrder[postEnd];
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(rootVal);
+
+        //Find parent element index from inorder array
+        int k = 0;
+        for (int i = inStart; i <= inEnd; i++) {
+            if (inOrder[i] == rootVal) {
+                k = i;
+                break;
+            }
+        }
+        root.left = buildTreeHelper(postOrder, postStart, postStart + k - 1, inOrder, inStart, k - 1);
+        root.right = buildTreeHelper(postOrder, postStart + k - inStart, postEnd - 1, inOrder, k + 1, inEnd);
+        return root;
+    }
+
+    public static BinaryTreeNode<Integer> buildTree(int[] inOrder, int[] postOrder) {
+        int n = postOrder.length;
+
+        int postStart = 0;
+        int postEnd = n - 1;
+        int inStart = 0;
+        int inEnd = n - 1;
+
+        return buildTreeHelper(postOrder, postStart, postEnd, inOrder, inStart, inEnd);
+    }
+
     public static void main(String[] args) {
 //        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(1);
 //
@@ -400,7 +432,9 @@ public class BinaryTreeUse {
 
         int[] in = {4, 2, 5, 1, 3};
         int[] pre = {1, 2, 4, 5, 3};
-        BinaryTreeNode<Integer> root = buildTreeFromInPre(pre, in);
+        int[] post = {4, 5, 2, 3, 1};
+        //BinaryTreeNode<Integer> root = buildTreeFromInPre(pre, in);
+        BinaryTreeNode<Integer> root = buildTree(in, post);
         printTreeDetailed(root);
 
     }
