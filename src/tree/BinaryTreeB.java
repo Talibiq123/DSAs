@@ -92,6 +92,38 @@ public class BinaryTreeB {
                 }
             }
         }
+
+        public static int height(Node root) {
+            if (root == null) {
+                return 0;
+            }
+            int leftHeight = height(root.left);
+            int rightHeight = height(root.right);
+
+            return (1 + Math.max(leftHeight, rightHeight));
+        }
+
+        public static int CountOfNodes(Node root) {
+            if (root == null) {
+                return 0;
+            }
+            int countLeftNodes = CountOfNodes(root.left);
+            int countRightNodes = CountOfNodes(root.right);
+
+            return 1 + countLeftNodes + countLeftNodes;
+        }
+
+        public static int SumOfNodes(Node root) {
+            if (root == null) {
+                return 0;
+            }
+            int countLeftNodes = SumOfNodes(root.left);
+            int countRightNodes = SumOfNodes(root.right);
+
+            return root.data + countLeftNodes + countLeftNodes;
+        }
+
+
     }
 
     public static void main(String[] args) {
@@ -99,14 +131,13 @@ public class BinaryTreeB {
         BinaryTreeApna tree = new BinaryTreeApna();
         Node root = tree.buildTree(nodes);
 
-        tree.preorder(root);
-        System.out.println();
-        tree.inorder(root);
-        System.out.println();
-        tree.postorder(root);
-        System.out.println();
-
-        tree.printLevelWise(root);
+        //tree.preorder(root);
+        //tree.inorder(root);
+        //tree.postorder(root);
+        //tree.printLevelWise(root);
+        //System.out.println(tree.height(root));
+        //System.out.println(tree.CountOfNodes(root));
+        System.out.println(tree.SumOfNodes(root));
 
 
     }
