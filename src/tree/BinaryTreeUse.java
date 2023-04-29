@@ -276,7 +276,7 @@ public class BinaryTreeUse {
                 pendingChildren.add(leftChild);
             }
 
-            System.out.println("Enter the right child of "+front.data);
+            System.out.println("Enter right child of "+front.data);
             int right = sc.nextInt();
             if (right != -1) {
                 BinaryTreeNode<Integer> rightChild = new BinaryTreeNode<>(right);
@@ -285,6 +285,79 @@ public class BinaryTreeUse {
             }
 
         }
+        return root;
+    }
+
+    public static void printLevelWise(BinaryTreeNode<Integer> root) {
+        Queue<BinaryTreeNode<Integer>> pendingQueue = new LinkedList<>();
+        pendingQueue.add(root);
+
+        while (!pendingQueue.isEmpty()) {
+            BinaryTreeNode<Integer> frontNode = pendingQueue.poll();
+
+            if (frontNode == null) {
+                System.out.println();
+
+                if (!pendingQueue.isEmpty()) {
+                    pendingQueue.add(null);
+                }
+            } else {
+                System.out.print(frontNode.data + " -> L:");
+
+                if (frontNode.left != null) {
+                    pendingQueue.add(frontNode.left);
+                    System.out.print(frontNode.left.data + ", R:");
+                } else {
+                    System.out.print("-1, R:");
+                }
+                if (frontNode.right != null) {
+                    pendingQueue.add(frontNode.right);
+                    System.out.println(frontNode.right.data);
+                } else {
+                    System.out.println("-1");
+                }
+            }
+
+        }
+    }
+
+    public static BinaryTreeNode<Integer> buildTreeFromPreInHelper(int[] pre, int[] in, int siPre, int eiPre, int siIn, int eiIn) {
+        if (siPre > eiPre) {
+            return null;
+        }
+        int rootData = pre[siPre];
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<Integer>(rootData);
+
+        int rootIndex = -1;
+        for (int i = siIn; i <= eiIn; i++) {
+            if (in[i] == rootData) {
+                rootIndex = i;
+                break;
+            }
+        }
+
+        //I am assuming that root is actually present in inorder
+        int siPreLeft = siPre + 1;
+        int siInLeft = siIn;
+        int eiInLeft = rootIndex - 1;
+        int siInRight = rootIndex + 1;
+        int eiPreRight = eiPre;
+        int eiInRight = eiIn;
+
+        int leftSubtreeLength = eiInLeft - siInLeft + 1;
+
+        int eiPreLeft = siPreLeft + leftSubtreeLength - 1;
+        int siPreRight = eiPreLeft + 1;
+
+        BinaryTreeNode<Integer> left = buildTreeFromPreInHelper(pre, in, siPreLeft, eiPreLeft, siInLeft, eiInLeft);
+        BinaryTreeNode<Integer> right = buildTreeFromPreInHelper(pre, in, siPreRight, eiPreRight, siInRight, eiInRight);
+        root.left = left;
+        root.right = right;
+        return root;
+    }
+
+    public static BinaryTreeNode<Integer> buildTreeFromInPre(int[] pre, int[] in) {
+        BinaryTreeNode<Integer> root = buildTreeFromPreInHelper(pre, in, 0, pre.length - 1, 0, in.length - 1);
         return root;
     }
 
@@ -321,7 +394,13 @@ public class BinaryTreeUse {
         //System.out.println("is Balance "+isBalancedBetter(root).isBalanced);
 
         //System.out.println("Diameter is "+diameterOfBinaryTree(root));
-        BinaryTreeNode<Integer> root = takeInputLevelWise();
+        //BinaryTreeNode<Integer> root = takeInputLevelWise();
+        //printTreeDetailed(root);
+        //printLevelWise(root);
+
+        int[] in = {4, 2, 5, 1, 3};
+        int[] pre = {1, 2, 4, 5, 3};
+        BinaryTreeNode<Integer> root = buildTreeFromInPre(pre, in);
         printTreeDetailed(root);
 
     }
