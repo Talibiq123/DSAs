@@ -1,3 +1,4 @@
+//coding Ninja
 // 2. second class in tree Package
 package tree;
 
@@ -407,6 +408,31 @@ public class BinaryTreeUse {
 
     }
 
+    private static Pair<Integer, Integer> maxMin = new Pair<Integer, Integer>(Integer.MAX_VALUE, Integer.MIN_VALUE);
+    public static Pair<Integer, Integer> getMinAndMax(BinaryTreeNode<Integer> root) {
+        getMinAndMaxHelper(root);
+        return maxMin;
+    }
+
+    private static void getMinAndMaxHelper(BinaryTreeNode<Integer> root) {
+        if (root == null) {
+            return;
+        }
+        int rootData = root.data;
+        int maxVal = maxMin.maximum;
+        if (rootData > maxVal) {
+            maxMin.maximum = root.data;
+        }
+
+        int minVal = maxMin.minimum;
+        if (rootData < minVal) {
+            maxMin.minimum = root.data;
+        }
+
+        getMinAndMaxHelper(root.left);
+        getMinAndMaxHelper(root.right);
+    }
+
     public static void main(String[] args) {
 //        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(1);
 //
@@ -452,8 +478,10 @@ public class BinaryTreeUse {
         //BinaryTreeNode<Integer> root = buildTree(in, post);
         //printTreeDetailed(root);
 
-        insertDuplicateNodes(root);
-        printLevelWise(root);
+        //insertDuplicateNodes(root);
+        //printLevelWise(root);
+        Pair<Integer, Integer> ans = getMinAndMax(root);
+        System.out.println(ans.maximum +" "+ ans.minimum);
 
     }
 }
