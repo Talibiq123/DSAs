@@ -29,6 +29,15 @@ public class BinaryTree {
 
             return newNode; //return root nodes
         }
+
+        public static void preorder(Node root) {
+            if (root == null) {
+                return;
+            }
+            System.out.print(root.data +" ");
+            preorder(root.left);
+            preorder(root.right);
+        }
     }
 
     public static void main(String[] args) {
