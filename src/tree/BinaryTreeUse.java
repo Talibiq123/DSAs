@@ -393,6 +393,20 @@ public class BinaryTreeUse {
         return buildTreeHelper(postOrder, postStart, postEnd, inOrder, inStart, inEnd);
     }
 
+    public static void insertDuplicateNodes(BinaryTreeNode<Integer> root) {
+        if (root == null) {
+            return;
+        }
+        BinaryTreeNode<Integer> newNode = new BinaryTreeNode<Integer>(root.data);
+        BinaryTreeNode<Integer> rootLeft = root.left;
+        root.left = newNode;
+        newNode.left = rootLeft;
+
+        insertDuplicateNodes(rootLeft);
+        insertDuplicateNodes(root.right);
+
+    }
+
     public static void main(String[] args) {
 //        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(1);
 //
@@ -426,16 +440,20 @@ public class BinaryTreeUse {
         //System.out.println("is Balance "+isBalancedBetter(root).isBalanced);
 
         //System.out.println("Diameter is "+diameterOfBinaryTree(root));
-        //BinaryTreeNode<Integer> root = takeInputLevelWise();
+
+        BinaryTreeNode<Integer> root = takeInputLevelWise();
         //printTreeDetailed(root);
         //printLevelWise(root);
 
-        int[] in = {4, 2, 5, 1, 3};
-        int[] pre = {1, 2, 4, 5, 3};
-        int[] post = {4, 5, 2, 3, 1};
+        //int[] in = {4, 2, 5, 1, 3};
+        //int[] pre = {1, 2, 4, 5, 3};
+        //int[] post = {4, 5, 2, 3, 1};
         //BinaryTreeNode<Integer> root = buildTreeFromInPre(pre, in);
-        BinaryTreeNode<Integer> root = buildTree(in, post);
-        printTreeDetailed(root);
+        //BinaryTreeNode<Integer> root = buildTree(in, post);
+        //printTreeDetailed(root);
+
+        insertDuplicateNodes(root);
+        printLevelWise(root);
 
     }
 }
