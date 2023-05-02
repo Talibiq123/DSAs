@@ -82,7 +82,7 @@ public class HeapsExample {
         heap.add(1);
         heap.add(5);
 
-        while (!heap.isEmpty()) {
+        while (!heap.isEmpty()) { //heap sort - O(nlogn)
             System.out.println(heap.peek());
             heap.remove();
         }
