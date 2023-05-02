@@ -46,7 +46,7 @@ public class Classroom {
 
     }
 
-    public static void bfs(ArrayList<Edge>[] graph) {
+    public static void bfs(ArrayList<Edge>[] graph) { //O(V + E) || O(V^2) for matrix
         Queue<Integer> q = new LinkedList<>();
         boolean visited[] = new boolean[graph.length];
         q.add(0); ///source = 0;
@@ -57,12 +57,16 @@ public class Classroom {
             if (!visited[curr]) { //visit current
                 System.out.print(curr+" ");
                 visited[curr] = true;
-                for (int i = 0; i < graph[curr].size(); i++) {
+                for (int i = 0; i < graph[curr].size(); i++) { //code for visiting all neighbour
                     Edge e = graph[curr].get(i);
                     q.add(e.dest);
                 }
             }
         }
+    }
+
+    public static void dfs(ArrayList<Edge>[] graph, int curr) {
+        
     }
 
     public static void main(String[] args) {
@@ -79,5 +83,6 @@ public class Classroom {
         ArrayList<Edge>[] graph = new ArrayList[V]; // null stored -> empty ArrayList
         createGraph(graph);
         bfs(graph);
+        dfs(graph, 0);
     }
 }
