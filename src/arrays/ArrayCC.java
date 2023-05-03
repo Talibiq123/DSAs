@@ -21,8 +21,11 @@ public class ArrayCC {
         }
 
         System.out.println("Elements of Array ");
-        for (int i = 0; i < n; i++) {
-            System.out.print(arr[i] +" ");
+//        for (int i = 0; i < n; i++) {
+//            System.out.print(arr[i] +" ");
+//        }
+        for(int i : arr) {
+            System.out.print(i+" ");
         }
     }
 }
