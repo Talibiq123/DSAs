@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fd273b9a-0d46-4096-b274-e6a0d7594af0" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Basics/Smallest_Largest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Basics/Smallest_Largest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/strings/DuplicateCharacters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/strings/DuplicateCharacters.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,13 +43,13 @@
     &quot;last_opened_file_path&quot;: &quot;E:/Users/TALIB SAEED/Assignments&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Smallest_Largest">
-    <configuration name="FindLargest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="arrays.FindLargest" />
+  <component name="RunManager" selected="Application.DuplicateCharacters">
+    <configuration name="DuplicateCharacters" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="strings.DuplicateCharacters" />
       <module name="DSAs" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="arrays.*" />
+          <option name="PATTERN" value="strings.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -57,12 +57,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MultiplyTwoFloatingPointNumbers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Basics.MultiplyTwoFloatingPointNumbers" />
+    <configuration name="FindLargest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="arrays.FindLargest" />
       <module name="DSAs" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Basics.*" />
+          <option name="PATTERN" value="arrays.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -111,11 +111,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DuplicateCharacters" />
         <item itemvalue="Application.Smallest_Largest" />
         <item itemvalue="Application.SecondLargest" />
         <item itemvalue="Application.FindLargest" />
         <item itemvalue="Application.swapping" />
-        <item itemvalue="Application.MultiplyTwoFloatingPointNumbers" />
       </list>
     </recent_temporary>
   </component>
